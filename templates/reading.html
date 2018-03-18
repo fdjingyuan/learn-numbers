@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta http-equiv="pragma" content="no-cache"/>
+
+  <link crossorigin="anonymous" href="../static/css/main_1.css" media="all" rel="stylesheet">
+  <link crossorigin="anonymous" href="../static/css/main_2.css" media="all" rel="stylesheet">
+  <link crossorigin="anonymous" href="../static/css/main_3.css" media="all" rel="stylesheet">
+  <link rel="icon" href="static/img/front.ico" type="image/x-icon"/>
+
+
+  <meta name="viewport" content="width=device-width">
+     <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../static/js/paint.js"></script>
+     <script type="text/javascript" src="../static/js/update_problem.js"></script>
+
+<style type="text/css">
+* {
+	font-family: '微软雅黑';
+	font-size:12px;
+}
+
+canvas {
+	border: 2px dashed gray;
+}
+
+</style>
+  <title>Learn for reading</title>
+
+
+  </head>
+
+
+
+
+
+<!-- start of header -->
+  <body class="logged-out env-production emoji-size-boost page-responsive min-width-0 f4 site-header-dark">
+
+  <div class="position-relative js-header-wrapper ">
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress" style="transition: width 0.4s ease 0s; width: 100%;"></div></div>
+
+<div class="header" role="banner" style="background-color: #3498db">
+  <div class="container clearfix">
+    <div>
+      <img src="../static/img/front-1.png" aria-hidden="true" style="float:left;" class="octicon" height="35" version="1.1" viewBox="0 0 16 16" width="35" position-relative="-50px -100px"/>
+        <h4 style="text-align: left; color: #ffffff">
+              &nbsp; &nbsp;  Fun - learning: Ready to do reading !
+    </h4>
+</div>
+  </div>
+</div>
+  <!-- end of header -->
+
+  <div id="start-of-content" class="accessibility-aid"></div>
+    <div id="js-flash-container">
+</div>
+      <div id="js-pjax-container" data-pjax-container="">
+<div class="page-content container clearfix">
+
+
+<!--begin of the first part -->
+  <div style="margin:0;padding:0;width:30%;float:left">
+
+    <div style="padding-right: 15px;">
+          <dl class="form-group">
+              <div>
+          <img src="../static/img/listen.jpg" id="listen" style="float:right;" aria-hidden="true" class="octicon" height="30" version="1.1" viewBox="0 0 16 16" width="30" position-relative="-50px -100px"/>
+         <h3>Listen to the question</h3>
+         <embed height="50" width="100" src="">
+              </div>
+          </dl>
+          <dl class="form-group">
+            <dt><label>Your answer</label></dt>
+            <dd><input class="form-control" id="recognize_text" size="8" placeholder="Waiting to recognize" type="text" value=""></dd>
+          </dl>
+        <dl class="form-group">
+
+            <p><button class="btn" id="submit_reading">Submit answer</button></p>
+
+        <dl class="form-group">
+            <dt><label>Right answer</label></dt>
+            <dd><input placeholder="Waiting to display" class="form-control" id="right_answer_reading" size="8" type="text" value=""></dd>
+          </dl>
+
+            <p class="js-length-limited-input-warning user-profile-bio-message d-none"></p>
+            <div class="suggester-container">
+              <div class="suggester js-suggester js-navigation-container" >
+              </div>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<!-- end of the first part -->
+
+    <!-- begin of the second part -->
+ <div id="d" style="float: right">
+     <div>
+　　　　<canvas id="canvas" width="600" height="300" style="border:1px solid grey;"></canvas>
+     </div>
+     <div>
+         <button id="clear" class="btn" style="float: right">Clear</button>
+         <button id="recognize" class="btn" style="margin-right: 10px; float: right">Recognize</button>
+     </div>
+　　</div>
+
+
+ <script>
+        var canvas=document.getElementById("canvas");
+        var ctx=canvas.getContext("2d");
+
+        canvas.onmousedown=function(event){
+            var x=event.clientX-canvas.offsetLeft;
+            var y=event.clientY-canvas.offsetTop;
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+
+            document.onmousemove=function(event){
+            var x=event.clientX-canvas.offsetLeft;
+            var y=event.clientY-canvas.offsetTop;
+            ctx.lineTo(x,y);
+            ctx.lineWidth = 8;
+            ctx.strokeStyle="black";
+            ctx.stroke();
+            };
+        };
+        document.onmouseup=function(){
+            ctx.closePath();
+            document.onmousemove=null;
+        };
+    </script>
+
+    <!-- end of the second part -->
+
+
+
+
+<!-- start footer -->
+<div class="container site-footer-container" style="clear: both">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links">
+      <li>© <span> Copyright:</span></li>
+        <li><a  data-ga-click="Footer, go to terms, text:terms">Jingyuan Liu</a></li>
+        <li><a  data-ga-click="Footer, go to privacy, text:privacy">Zheng Wei</a></li>
+        <li><a  data-ga-click="Footer, go to security, text:security">Luofeng Liao</a></li>
+      <span >  Group: Fun-learning;</span></li> Competition @ Fudan University, 2018 Spring.
+
+    </ul>
+  </div>
+</div>
+
+<!-- end footer -->
+</div>
+<link crossorigin="anonymous" href="../static/css/sweetalert.css" media="all" rel="stylesheet">
+<script src="../static/js/sweetalert.min.js"></script>
+    <script src="../static/js/your_profile.js"></script>
+
+
+
+
+
+
+
+</body></html>
